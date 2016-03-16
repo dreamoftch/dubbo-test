@@ -3,6 +3,19 @@
 
 步骤也可以参考：https://github.com/alibaba/dubbo
 
+注：使用jdk8的时候，启动dubbo-admin的时候，会失败，需要采取下面步骤：
+1.修改
+<webx_version>3.0.8</webx_version>
+为：
+<webx_version>3.1.6</webx_version>
+2.在dubbo-admin的pom.xml中添加下面依赖：
+<groupId>org.apache.velocity</groupId>
+	<artifactId>velocity</artifactId>
+	<version>1.7</version>
+</dependency>
+即可。
+
+
 Dubbo is a distributed service framework enpowers applications with service import/export capability with high performance RPC.
 
 It's composed of three kernel parts:
