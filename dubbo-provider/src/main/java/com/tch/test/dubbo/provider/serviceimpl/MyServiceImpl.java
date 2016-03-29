@@ -4,8 +4,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import com.alibaba.dubbo.config.annotation.Service;
+import com.tch.test.dubbo.model.User;
 import com.tch.test.dubbo.service.MyService;
 
+@Service
 public class MyServiceImpl implements MyService {
 
     private static final AtomicInteger atomicInteger = new AtomicInteger(1);
@@ -17,8 +20,8 @@ public class MyServiceImpl implements MyService {
     }
 
     @Override
-    public String helloWorld() {
-        return "helloWorld-" + atomicInteger.getAndIncrement();
+    public String helloWorld(User user) {
+        return "helloWorld-" + user + " , " + atomicInteger.getAndIncrement();
     }
 
 }
